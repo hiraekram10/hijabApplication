@@ -80,7 +80,7 @@ async function uploadFile(f) {
 async function addProduct(e) {
   e.preventDefault();
   let pcolor = document.querySelectorAll(".colorInput");
-  console.log(pcolor);
+  
   let colorsArr = [];
   pcolor.forEach((inp) => {
     if (inp.value.trim() !== "") {
