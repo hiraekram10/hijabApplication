@@ -1,3 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* Top Announcement Bar */
 .announcement-bar {
   background-color: #f2ece9;
@@ -23,6 +38,12 @@
   filter: invert(1);
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 576px) {
+  .announcement-bar {
+    font-size: 12px;
+  }
 }
 
 /* NAVBAR */
@@ -93,30 +114,24 @@
   background-color: #fff;
   color: #000;
 }
-
-/* Hero Section */
 .hero-section {
   background-image: url("assets/images/hero-img.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  padding: 40px 20px;
+  min-height: 60vh;
 }
 
-.hero-section .btn {
-  background-color: #fff;
-  color: #000;
-  border: none;
-  font-weight: 600;
-  transition: all 0.3s;
-}
-
-.hero-section .btn:hover {
-  background-color: #f0f0f0;
+.hero-btn:hover {
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Heights */
+@media (min-width: 768px) {
+  .hero-section {
+    min-height: 90vh;
+  }
 }
 
 /* Product Section */
