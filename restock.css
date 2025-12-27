@@ -1,0 +1,316 @@
+/* ===============================================   WHOLE BODY   =============================================== */
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    /* Padding handling ke liye zaroori hai */
+}
+
+body {
+    overflow-x: hidden;
+    /* Sirf horizontal scroll rokne ke liye */
+    width: 100%;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+/* ===============================================   CAROUSEL   =============================================== */
+.carousel-item {
+    color: black;
+    text-align: center;
+    background-color: #f3edea;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(100) brightness(0);
+    height: 15px;
+}
+
+/* ===============================================   NAVBAR   =============================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black !important;
+    padding: 15px 5% !important;
+    width: 100%;
+}
+
+#sec0 {
+    display: none;
+}
+
+#sec1 img {
+    width: 100%;
+    height: 100px;
+}
+
+#sec2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+}
+
+#sec2 a {
+    color: rgb(221, 221, 221);
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+#sec2 a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+#sec3 {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* Icons ke darmiyan fasla */
+}
+
+#sec3 i,
+#sec3 svg {
+    font-size: 1.2rem !important;
+    transition: all 0.5s ease-in-out;
+    color: rgb(221, 221, 221);
+    display: inline-block;
+}
+
+
+#sec3 svg:hover {
+    color: #ffffff !important;
+    transform: scale(1.2) !important;
+    cursor: pointer !important;
+}
+
+#sec3 button {
+    padding: 8px 15px;
+    border: 1px solid rgb(221, 221, 221);
+    color: white;
+    transition: 0.5s ease-in-out;
+    background-color: black;
+    font-size: 12px;
+}
+
+#sec3 button:hover {
+    background-color: white;
+    color: black !important;
+    transform: scale(1.05);
+}
+
+/* ===============================================   MEDIA QUERIES   =============================================== */
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 15px 2% !important;
+    }
+
+    #sec0 {
+        display: inline;
+    }
+
+    #sec2 {
+        display: none;
+    }
+
+    .offcanvas {
+        background-color: black !important;
+    }
+
+     .offcanvas-body {
+        display: flex;
+        flex-direction: column;
+     }
+
+    .offcanvas-body a {
+        color: rgb(221, 221, 221);
+        text-decoration: none;
+        padding: 5px 10px 40px;
+        font-size: 14px;
+
+    }
+
+    .offcanvas-body2 a:hover {
+        color: white;
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #sec1 img {
+        height: 40px;
+    }
+
+    #sec3 i,
+    #sec3 svg {
+        font-size: 1rem !important;
+        margin-right: 10px;
+    }
+
+    .carousel-item {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 434px) {
+    #sec3 button {
+        display: none;
+    }
+
+    #sec3 .fa-user {
+        display:none;
+    }
+}
+
+
+.bg-custom-light {
+    background-color: #f2ebe6;
+}
+
+.product-card {
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+}
+
+.product-price {
+    font-size: 13px;
+    color: #555;
+}
+
+.badge-stock {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: black;
+    color: white;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 2px;
+}
+
+/* For 5 columns on large screens */
+@media (min-width: 992px) {
+    .col-lg-5 {
+        flex: 0 0 auto;
+        width: 20%;
+    }
+}
+
+/* Collection Section Styles */
+.collection-section {
+    background-color: #f2ebe6; /* Image wala beige background */
+}
+
+.collection-item img {
+    transition: transform 0.5s ease;
+}
+
+.collection-item:hover img {
+    transform: scale(1.05); /* Hover par image thori zoom hogi */
+}
+
+.collection-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Newsletter Styles */
+.newsletter-input {
+    border: 1px solid #ccc !important;
+    border-radius: 0 !important; /* Sharp corners */
+    padding: 12px 15px;
+    font-size: 14px;
+}
+
+.newsletter-input:focus {
+    box-shadow: none;
+    border-color: #000 !important;
+}
+
+.newsletter-btn {
+    border: none;
+    background: transparent;
+    padding-right: 15px;
+}
+
+.newsletter-btn:hover {
+    color: #555;
+}
+
+.collection {
+    width: 70px;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 768px) {
+    .collection-text {
+        font-size: 12px;
+    }
+}
+
+/* Footer Styles */
+.bg-black {
+    background-color: #000000 !important;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #adb5bd; /* Light grey text */
+    text-decoration: none;
+    font-size: 13px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-input-group input::placeholder {
+    color: #6c757d;
+}
+
+.footer-input-group input:focus {
+    border-color: #ffffff !important;
+}
+
+.social-icons a {
+    transition: opacity 0.2s;
+}
+
+.social-icons a:hover {
+    opacity: 0.7;
+}
+
+.form-select {
+    font-size: 12px !important;
+}
+
+/* Payment icons setup */
+.payment-icons i {
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.payment-icons i:hover {
+    color: #fff !important;
+}
