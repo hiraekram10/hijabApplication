@@ -96,42 +96,217 @@
 
 /* Hero Section */
 .hero-section {
-  position: relative;
-  height: 600px;
   background-image: url("assets/images/hero-img.webp");
   background-size: cover;
   background-position: center;
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+  background-repeat: no-repeat;
+  min-height: 600px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: end;
-  padding-bottom: 80px;
-  text-align: center;
-  color: #fff;
+  padding: 40px 20px;
 }
 
-.hero-btn {
+.hero-section .btn {
   background-color: #fff;
   color: #000;
   border: none;
-  padding: 14px 30px;
-  font-size: 14px;
   font-weight: 600;
-  letter-spacing: 2px;
-  cursor: pointer;
   transition: all 0.3s;
-  border-radius: 4px;
 }
 
-.hero-btn:hover {
-  background-color: #c1b8b8;
+.hero-section .btn:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+/* Product Section */
+.productColor {
+  width: 20px;
+  height: 20px;
+  background-color: blueviolet;
+}
+
+.pro-container {
+  background-color: transparent;
+  padding: 40px 0;
+}
+
+.pro-container h2 {
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+/* Content Section */
+.container.text-center {
+  max-width: 1200px;
+}
+
+/* ============================================
+   RESPONSIVE MEDIA QUERIES
+   ============================================ */
+
+/* Extra Small Devices (phones, less than 576px) */
+@media (max-width: 575.98px) {
+  /* Announcement Bar */
+  .announcement-bar {
+    font-size: 11px;
+    padding: 6px 0;
+  }
+
+  .announcement-bar .carousel-control-prev,
+  .announcement-bar .carousel-control-next {
+    width: 25px;
+  }
+
+  /* Navbar */
+  .navbar-brand-custom .brand-name {
+    font-size: 16px;
+    letter-spacing: 1px;
+  }
+
+  .navbar-brand-custom .brand-location {
+    font-size: 8px;
+  }
+
+  .navbar-collapse {
+    margin-top: 15px;
+  }
+
+  .nav-link-custom {
+    padding: 12px 16px !important;
+    border-bottom: 1px solid #333;
+  }
+
+  .navbar-icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+    margin-top: 10px;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    min-height: 400px;
+    aspect-ratio: 9 / 16;
+    padding: 30px 15px;
+  }
+
+  .hero-section .btn {
+    font-size: 13px;
+    padding: 10px 25px !important;
+  }
+
+  /* Content Text */
+  .container.text-center {
+    padding: 15px !important;
+    margin: 20px auto !important;
+  }
+
+  .container.text-center h2 {
+    font-size: 18px !important;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .container.text-center p {
+    font-size: 13px !important;
+    line-height: 1.6;
+  }
+
+  /* Products */
+  .pro-container {
+    margin: 20px 10px !important;
+    padding: 20px 0;
+  }
+
+  .pro-container h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  #products {
+    gap: 15px !important;
+  }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .hero-section {
+    min-height: 450px;
+    aspect-ratio: 4 / 5;
+  }
+
+  .container.text-center h2 {
+    font-size: 20px;
+  }
+
+  .container.text-center p {
+    font-size: 14px;
+  }
+
+  .navbar-icons {
+    gap: 15px;
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-section {
+    min-height: 500px;
+  }
+
+  .nav-link-custom {
+    font-size: 13px;
+    padding: 8px 12px !important;
+  }
+
+  .navbar-icons {
+    gap: 15px;
+  }
+
+  .navbar-icons i {
+    font-size: 18px;
+  }
+
+  .country-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+
+  .container.text-center h2 {
+    font-size: 22px;
+  }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .hero-section {
+    min-height: 600px;
+  }
+
+  .nav-link-custom {
+    padding: 8px 14px !important;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .hero-section {
+    min-height: 700px;
+  }
+
+  .container.text-center {
+    padding: 60px 100px;
+  }
+}
+
+/* Landscape Orientation for Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    min-height: 350px;
+  }
 }
 
 /* Product  */
@@ -140,6 +315,6 @@
   height: 20px;
   background-color: blueviolet;
 }
-.container {
+.pro-container {
   background-color: #0000;
 }
