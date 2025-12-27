@@ -95,11 +95,14 @@ function cartHandle() {
   let cart = JSON.parse(localStorage.getItem("cart"));
   console.log(cart);
   console.log("cart");
+ let total = 0
 
 cartContainer.innerHTML =''
 
   cart.forEach((product,index) => {
     console.log(product);
+  total = product.price * product.quantity
+    
     // console.log('index-->',index);
     
 
@@ -121,7 +124,7 @@ cartContainer.innerHTML =''
         `;
   });
 
-
+totleDiv.innerHTML = total
 }
 btnDrawer.addEventListener("click", cartHandle);
 
