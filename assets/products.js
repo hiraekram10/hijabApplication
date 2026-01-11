@@ -1,5 +1,44 @@
 import supabase from "../config.js";
+import { checkRole } from "../dashbord.js";
 let productList = document.getElementById('products')
+let classBtn = document.querySelectorAll('.btn-hidden')
+
+
+async function btnDisplay() {
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) {
+    location.href = "./login.html";
+    return;
+  }
+
+  //   check role (fetch db)
+  const { data, error } = await supabase
+    .from("customers")
+    .select("*")
+    .eq("uid", user.id)
+    .single();
+    console.log(data.role);
+
+    if(data.role == 'admin'){
+    Array.from(classBtn).forEach((btn)=>{
+btn.style.display = 'flex'
+    })
+      
+    }else{
+           Array.from(classBtn).forEach((btn)=>{
+btn.style.display = 'none'
+    })
+    }
+    
+  
+
+}
+
+btnDisplay()
+
+
 
 
 async function renderProducts(params) {
@@ -22,7 +61,11 @@ async function renderProducts(params) {
     }).join('')}
 
   </div>
-    <button  class="btn btn-primary" onclick="window.location.href='pDetail.html?id=${product.id}'">view Details</abutton>
+    <button  class="btn btn-primary" onclick="window.location.href='pDetail.html?id=${product.id}'">view Details</button>
+
+     <button  class="btn btn-primary btn-hidden" onclick="window.location.href='pDetail.html?id=${product.id}'" style="display:none">Edit</button>
+      <button  class="btn btn-primary btn-hidden"  onclick="window.location.href='pDetail.html?id=${product.id}'" style="display:none">Delte</button>
+       
   </div>
 </div>`
     });

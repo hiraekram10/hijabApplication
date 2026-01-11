@@ -1,5 +1,8 @@
 import supabase from "./config.js";
 
+
+
+
 async function checkRole() {
   const {
     data: { user },
@@ -15,10 +18,13 @@ async function checkRole() {
     .select("*")
     .eq("uid", user.id)
     .single();
+  
   if (data.role != "admin") {
     alert("access denied");
     return (location.href = "./signup.html");
   }
+  
+
 }
 
 checkRole();
@@ -32,7 +38,7 @@ let addColor = document.getElementById("addColor");
 let colorGroup = document.getElementById("colorGroup");
 let pForm = document.getElementById("pForm");
 
-addColor.addEventListener("click", () => {
+addColor && addColor.addEventListener("click", () => {
   let div = document.createElement("div");
   div.className = "color-feild";
   div.innerHTML = `
@@ -107,7 +113,7 @@ async function addProduct(e) {
     console.log(error);
   }
 }
-pForm.addEventListener("submit", addProduct);
+pForm && pForm.addEventListener("submit", addProduct);
 
 //  function uploadFile(f) {
 //    let fullname = `${f} khan`
@@ -117,3 +123,6 @@ pForm.addEventListener("submit", addProduct);
 
 // let returnCheck = uploadFile("hira")
 // console.log(returnCheck);
+
+
+export {checkRole}
